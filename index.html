@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Well, let's play some sound effects</title>
+  <script type="text/javascript">
+    play = true;
+    document.addEventListener('keydown', function(e) {
+      if(!play) {
+        return;
+      }
+//      play = false;
+      var min=10;
+      var max=50;
+      var random = Math.round(Math.random() * (+max - +min) + +min);
+      var audio = new Audio('audio/' + random + '-Cartoon-sound-effect.mp3');
+      audio.play();
+      audio.onended = function() {
+        play = true;
+      }
+    })
+  </script>
+</head>
+<body>
+
+</body>
+</html>
